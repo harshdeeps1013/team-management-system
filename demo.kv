@@ -1,0 +1,279 @@
+ 
+<MainFloat>:
+
+
+    
+
+<Tv>:
+    size_hint: (0.3,0.7)
+    pos_hint: {"x":0.2, "y":0.3}
+    Cust_screen_label:
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        id:tv_label
+        font_size: 20
+        text_size: self.width, None
+        size_hint_y: None
+        height: self.texture_size[1]
+        
+<GraphScreen>:       
+    size_hint: (0.3,0.7)
+    pos_hint: {"x":0.5, "y":0.3}
+    
+        
+<New_people>:
+    size_hint: (0.6,0.3)
+    pos_hint: {"x":0.2, "y":0}
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    
+    Add_bu_peop:
+        text:"Add people"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0, "y":0}
+        canvas.before:
+            Color:
+                rgba: (54/255, 111/255, 209/255,1)
+            Rectangle:
+                pos: self.pos
+        size: self.size
+        
+    Add_task:
+        text:"Add Task"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0.33, "y":0}
+        canvas.before:
+            Color:
+                rgba: (54/255, 111/255, 209/255,1)
+            Rectangle:
+                pos: self.pos
+        size: self.size
+    Add_project:
+        text:"Add Project"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0.66, "y":0}
+        
+    Asssign_task:
+        text:"Assign task"
+        id: city
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0.66, "y":0.3333}
+    Asssign_peop:
+        text:"Assign people"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0.33, "y":0.3333}
+    Asssign_pro:
+        text:"Subtask"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0, "y":0.3333}
+    Refresh:
+        text:"Refresh"
+        size_hint: (0.33333,0.3333)
+        pos_hint: {"x":0, "y":0.6666}
+        
+<User_name@TextInput>:
+    id:usr_name
+<User_mail@TextInput>:
+    id:usr_mail
+
+                  
+<Add_people_popup>:
+    pos_hint: {"x":0.5, "y":0.5}
+    
+<Add_Task_popup>:
+    pos_hint: {"x":0.5, "y":0.5}
+
+<Add_Pro_popup>:
+    pos_hint: {"x":0.5, "y":0.5}
+
+<La>:
+    height_hint:0.1
+    text:'Project'
+    pos_hint: {"x":0, "y":0.9}
+    size_hint:0.2,0.1
+    canvas.before:
+        Color:
+            rgba: (54/255, 111/255, 209/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+           
+<Scrol>:
+    pos_hint: {"x":0, "y":0.5}
+    size_hint: 0.5, 0.4 
+    scroll_type: ['bars']
+    bar_width:10
+    viewclass: 'Scrol_b'
+    spacing: 40
+    padding:10, 10
+
+    
+    RecycleBoxLayout:
+        color:(0, 0.7, 0.4, 0.8)
+        default_size: None, dp(56)
+  
+        # defines the size of the widget in reference to width and height
+        default_size_hint: 0.4, None 
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        
+<User_Label>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba:  (0, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    label1_text: 'label 1 text'
+    label2_text: 'label 2 text'
+    
+    pos: self.pos
+    size: self.size
+    Label:
+        id: id_label1
+        text: root.label1_text
+    Label:
+        id: id_label2
+        text: root.label2_text    
+<La2>:
+    height_hint:0.1
+    text:'id                         people'
+    pos_hint: {"x":0, "y":0.4}
+    size_hint:0.2,0.1
+    canvas.before:
+        Color:
+            rgba:(54/255, 111/255, 209/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size            
+<Recyc1>:
+    viewclass: 'User_Label'
+    spacing: 40
+    padding:10, 10
+    size_hint: (0.2,0.4)
+    pos_hint: {"x":0, "y":0}
+    scroll_type: ['bars']
+    bar_width:20
+    
+    
+    SelectableRecycleBoxLayout: 
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
+        
+        
+        
+        
+        
+        
+        
+        
+<Task_Label>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba:  (0, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    label1_text: 'label 1 text'
+    label2_text: 'label 2 text'
+    label3_text: 'label 3 text'
+    pos: self.pos
+    size: self.size
+    Label:
+        id: id_label1
+        text: root.label1_text
+    Label:
+        id: id_label2
+        text: root.label2_text
+    Del_Button:
+        id: id_label3
+        text:''
+
+<Del_Button>:
+    canvas:
+        Rectangle:
+            
+            size: (30,30) # choose a value of a which fit the most with your button
+            pos: (self.pos[0]+self.size[0]/2.0) - 15, (self.pos[1]+self.size[1]/2.0) -15
+            source: root.image_path
+
+
+
+
+<Assign_Task_Poup_inside>:
+    MultiSelectSpinner:
+        values:self.uu()
+    MultiSelectSpinner:
+        values:self.vv()
+        topa:False
+
+
+<Assign_peop_Poup_inside>:
+    MultiSelectSpinner:
+        values:self.uu()
+    MultiSelectSpinner:
+        values:self.ww()
+        topa:False
+        
+        
+<Assign_pro_Poup_inside>:
+    MultiSelectSpinner:
+        values:self.ww()
+    MultiSelectSpinner:
+        values:self.vv()
+        topa:False
+        
+        
+<MultiSelectOption@ToggleButton>:
+    size_hint: 1, None
+    height: '48dp'
+    
+    
+    
+<La3>:
+    height_hint:0.1
+    text:'id          task'
+    pos_hint: {"x":0.8, "y":0.9}
+    size_hint:0.2,0.1
+    canvas.before:
+        Color:
+            rgba: (54/255, 111/255, 209/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size              
+<Recyc2>:
+    viewclass: 'Task_Label'
+    spacing: 40
+    padding:10, 10
+    size_hint: (0.2,0.9)
+    pos_hint: {"x":0.8, "y":0}
+    scroll_type: ['bars']
+    bar_width:20
+    
+    
+    SelectableRecycleBoxLayout:
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True        
